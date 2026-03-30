@@ -1,11 +1,12 @@
-:- module(motor, [
-    recomendar/2,
-    top_n/3,
-    mostrar_recomendacoes/1,
-    avaliar_musica/3
-]).
+%:- module(motor, [
+%    recomendar/2,
+%    top_n/3,
+%    mostrar_recomendacoes/1,
+%    avaliar_musica/3
+%]).
 
-:- use_module(musicas_db).
+%:- use_module('db.pl').
+% Observação: module e use_module foram removidos para não dar conflito com a interface.
 
 :- dynamic avaliacao/3.
 
@@ -74,6 +75,6 @@ mostrar_recomendacoes(Selecionadas) :-
     top_n(Recs, 5, Top5),
     nl, write('--- RECOMENDAÇÕES ---'), nl,
     forall(member(Pts-Id-Razoes, Top5), (
-        musica(Id, Titulo, Artista, Album, Genero),
+        musica(Id, Titulo, Artista, _, Genero),
         format('~w pts | ~w - ~w (~w) [Razões: ~w]~n', [Pts, Titulo, Artista, Genero, Razoes])
     )).

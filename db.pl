@@ -1,6 +1,7 @@
 % musica(Id, Titulo, Artista, Album, Genero)
 % genero_similar(genero, genero_semelhante)
-:- module(musicas_db, [musica/5, genero_similar/2]).
+%:- module(db, [musica/5, genero_similar/2]).
+% module foi removido para não dar conflito coma  interface
 
 % --- Rock clássico ---
 musica(bohemian_rhapsody,   'Bohemian Rhapsody',       'Queen',             'A Night at the Opera',        rock).
